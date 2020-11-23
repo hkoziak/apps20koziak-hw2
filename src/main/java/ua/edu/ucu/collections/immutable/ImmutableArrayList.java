@@ -108,7 +108,7 @@ public class ImmutableArrayList implements ImmutableList {
     }
 
     private void check_index(int index) {
-        if ((index >= size) || index < 0)) {
+        if (index >= size || index < 0) {
             throw new IndexOutOfBoundsException();
         }
     }
