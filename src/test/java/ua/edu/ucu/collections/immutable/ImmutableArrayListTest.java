@@ -27,15 +27,9 @@ public class ImmutableArrayListTest {
 
     @Test
     public void testArrayAddValueOnPosition() {
-        ImmutableArrayList newArray = baseArray.add(0, 21);
-        int expected = 21;
-        int actual = (Integer)newArray.get(0);
-        assertEquals(expected, actual, 0.00001);
-
-        // now lets insert in the middle
-        newArray = baseArray.add(3, 17);
-        expected = 17;
-        actual = (Integer)newArray.get(3);
+        ImmutableArrayList newArray = baseArray.add(3, 17);
+        int expected = 17;
+        int actual = (Integer)newArray.get(3);
         assertEquals(expected, actual, 0.00001);
 
         expected = 18;
@@ -75,14 +69,14 @@ public class ImmutableArrayListTest {
     @Test
     public void testArrayRemoveValue() {
         ImmutableArrayList newArray = baseArray.remove(startSize - 1);
-        int expected = 0;
+        int expected = 20;
         Integer actual = (Integer) newArray.get(0);
         assertEquals(expected, actual, 0.00001);
     }
 
     @Test
     public void testArraySetValue() {
-        ImmutableArrayList newArray = baseArray.set(0, 1);
+        ImmutableArrayList newArray = baseArray.set(1, 1);
         int expected = 1;
         Integer actual = (Integer)newArray.get(1);
         assertEquals(expected, actual, 0.00001);
@@ -107,21 +101,21 @@ public class ImmutableArrayListTest {
     }
 
     @Test
-    public void testClear() {
+    public void testArrayIsClear() {
         ImmutableArrayList newArray = baseArray.clear();
         boolean actual = newArray.isEmpty();
         assertTrue(actual);
     }
 
     @Test
-    public void testIsEmpty() {
+    public void testArrayIsEmpty() {
         ImmutableArrayList NewArray = new ImmutableArrayList();
         boolean actualResult = NewArray.isEmpty();
         assertTrue(actualResult);
     }
 
     @Test
-    public void testToArray() {
+    public void testOutputToArray() {
         Object[] newArray = baseArray.toArray();
         assertArrayEquals(startArray, newArray);
     }
