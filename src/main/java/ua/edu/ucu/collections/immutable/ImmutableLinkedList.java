@@ -51,7 +51,8 @@ public class ImmutableLinkedList implements ImmutableList {
         Object[] newArray = new Object[this.size + c.length];
         Object[] currentArray = this.toArray();
         System.arraycopy(currentArray, 0, newArray, 0, index);
-        System.arraycopy(currentArray, index, newArray, index + c.length, this.size - index);
+        System.arraycopy(currentArray, index, newArray, index + c.length,
+                this.size - index);
         System.arraycopy(c, 0, newArray, index, c.length);
         return new ImmutableLinkedList(newArray);
     }
@@ -71,7 +72,8 @@ public class ImmutableLinkedList implements ImmutableList {
         Object[] newArray = new Object[this.size - 1];
         Object[] currentArr = this.toArray();
         System.arraycopy(currentArr, 0, newArray, 0, index);
-        System.arraycopy(currentArr, index + 1, newArray, index, this.size - index - 1);
+        System.arraycopy(currentArr, index + 1, newArray, index,
+                this.size - index - 1);
         return new ImmutableLinkedList(newArray);
     }
 
@@ -115,7 +117,7 @@ public class ImmutableLinkedList implements ImmutableList {
     @Override
     public Object[] toArray() {
         Object[] array = new Object[this.size];
-        if (this.size > 0){
+        if (this.size > 0) {
             Node current = this.start;
             for (int i = 0; i < size; ++i) {
                 array[i] = current.getValue();
