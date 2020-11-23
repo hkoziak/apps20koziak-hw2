@@ -132,4 +132,19 @@ public class ImmutableLinkedList implements ImmutableList {
             throw new IndexOutOfBoundsException();
         }
     }
+
+//Added additional methods for Queue
+    public Object getStartValue() {
+        if (!this.isEmpty()) {
+            return this.start.getValue();
+        }
+        return null;
+    }
+
+    public Object getEndValue() {
+        if (!this.isEmpty()) {
+            return this.end.getValue();
+        }
+        return null;
+    }
 }
