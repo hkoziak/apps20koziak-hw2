@@ -1,5 +1,4 @@
 package ua.edu.ucu.collections.immutable;
-import ua.edu.ucu.collections.immutable.Node;
 
 public class ImmutableLinkedList implements ImmutableList {
     private Node start;
@@ -48,7 +47,7 @@ public class ImmutableLinkedList implements ImmutableList {
 
     @Override
     public ImmutableLinkedList addAll(int index, Object[] c) {
-        check_index(index - 1);
+        checkIndex(index - 1);
         Object[] newArray = new Object[this.size + c.length];
         Object[] currentArray = this.toArray();
         System.arraycopy(currentArray, 0, newArray, 0, index);
@@ -59,13 +58,12 @@ public class ImmutableLinkedList implements ImmutableList {
 
     @Override
     public Object get(int index) {
-        check_index(index);
-        Node CurrentNode = this.start;
-        while (index > 0) {
-            CurrentNode = CurrentNode.getNext();
-            --index;
+        checkIndex(index);
+        Node currentNode = this.start;
+        for (int i = 0; i < index; ++i) {
+            currentNode = currentNode.getNext();
         }
-        return CurrentNode.getValue();
+        return currentNode.getValue();
     }
 
     @Override
@@ -79,7 +77,7 @@ public class ImmutableLinkedList implements ImmutableList {
 
     @Override
     public ImmutableLinkedList set(int index, Object e) {
-        check_index(index);
+        checkIndex(index);
         Object[] currentArr = this.toArray();
         currentArr[index] = e;
         return new ImmutableLinkedList(currentArr);
@@ -127,7 +125,7 @@ public class ImmutableLinkedList implements ImmutableList {
         return array;
     }
 
-    private void check_index(int index) {
+    private void checkIndex(int index) {
         if ((index >= size) || (index < 0)) {
             throw new IndexOutOfBoundsException();
         }

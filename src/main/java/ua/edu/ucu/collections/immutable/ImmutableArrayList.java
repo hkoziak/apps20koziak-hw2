@@ -9,10 +9,10 @@ public class ImmutableArrayList implements ImmutableList {
         this.array = new Object[0];
     }
 
-    public ImmutableArrayList(Object[] add_array) {
-        this.size = add_array.length;
+    public ImmutableArrayList(Object[] addArray) {
+        this.size = addArray.length;
         this.array =  new Object[size];
-        System.arraycopy(add_array, 0, array, 0, size);
+        System.arraycopy(addArray, 0, array, 0, size);
     }
 
     @Override
@@ -32,7 +32,7 @@ public class ImmutableArrayList implements ImmutableList {
 
     @Override
     public ImmutableArrayList addAll(int index, Object[] c) {
-        check_index(index - 1);
+        checkIndex(index - 1);
         Object[] newArray = new Object[this.size + c.length];
         System.arraycopy(this.array, 0, newArray, 0, index);
         System.arraycopy(this.array, index, newArray, index + c.length,
@@ -43,22 +43,23 @@ public class ImmutableArrayList implements ImmutableList {
 
     @Override
     public Object get(int index) {
-        check_index(index);
+        checkIndex(index);
         return array[index];
     }
 
     @Override
     public ImmutableArrayList remove(int index) {
-        check_index(index);
+        checkIndex(index);
         Object[] newArray = new Object[this.size - 1];
         System.arraycopy(this.array, 0, newArray, 0, index);
-        System.arraycopy(this.array, index + 1, newArray, index, this.size - index - 1);
+        System.arraycopy(this.array, index + 1, newArray, index,
+                this.size - index - 1);
         return new ImmutableArrayList(newArray);
     }
 
     @Override
     public ImmutableArrayList set(int index, Object e) {
-        check_index(index);
+        checkIndex(index);
         Object[] newArray = new Object[size];
         newArray[index] = e;
         return new ImmutableArrayList(newArray);
@@ -107,7 +108,7 @@ public class ImmutableArrayList implements ImmutableList {
         return res.toString();
     }
 
-    private void check_index(int index) {
+    private void checkIndex(int index) {
         if (index >= size || index < 0) {
             throw new IndexOutOfBoundsException();
         }
