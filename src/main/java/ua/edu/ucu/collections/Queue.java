@@ -4,6 +4,9 @@ import ua.edu.ucu.collections.immutable.ImmutableLinkedList;
 public class Queue {
     private ImmutableLinkedList linkedArray = new ImmutableLinkedList();
 
+    public Queue() {
+    }
+
     public Object deQueue() {
         if (this.linkedArray.size() > 0) {
             Object restOfQueue = this.linkedArray.getStartValue();

@@ -133,7 +133,7 @@ public class ImmutableLinkedList implements ImmutableList {
         }
     }
 
-//Added additional methods for Queue
+//Added additional methods for Queue and Stack
     public Object getStartValue() {
         if (!this.isEmpty()) {
             return this.start.getValue();
