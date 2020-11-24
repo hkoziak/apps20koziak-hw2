@@ -32,7 +32,7 @@ public class ImmutableArrayList implements ImmutableList {
 
     @Override
     public ImmutableArrayList addAll(int index, Object[] c) {
-        checkIndex(index - 1);
+        checkIndex(index);
         Object[] newArray = new Object[this.size + c.length];
         System.arraycopy(this.array, 0, newArray, 0, index);
         System.arraycopy(this.array, index, newArray, index + c.length,

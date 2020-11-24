@@ -47,7 +47,7 @@ public class ImmutableLinkedList implements ImmutableList {
 
     @Override
     public ImmutableLinkedList addAll(int index, Object[] c) {
-        checkIndex(index - 1);
+        checkIndex(index);
         Object[] newArray = new Object[this.size + c.length];
         Object[] currentArray = this.toArray();
         System.arraycopy(currentArray, 0, newArray, 0, index);
