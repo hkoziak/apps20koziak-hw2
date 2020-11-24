@@ -119,4 +119,9 @@ public class ImmutableArrayListTest {
         Object[] newArray = baseArray.toArray();
         assertArrayEquals(startArray, newArray);
     }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testArrayOutOfBoundsExceptionToArray() {
+        baseArray.get(startSize);
+    }
 }
