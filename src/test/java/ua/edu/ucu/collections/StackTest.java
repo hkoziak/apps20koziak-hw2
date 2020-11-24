@@ -8,8 +8,9 @@ public class StackTest {
     @Test
     public void testStackPush() {
         baseStack.push(13);
+        baseStack.push(12);
         int actual = (int) baseStack.peek();
-        int expected = 13;
+        int expected = 12;
         assertEquals(expected, actual, 0.00001);
     }
 
@@ -21,8 +22,8 @@ public class StackTest {
         int actual2 = (int) baseStack.pop();
         int expected1 = 12;
         int expected2 = 13;
-        assertEquals(expected1, actual2, 0.00001);
-        assertEquals(expected1, actual2, 0.00001);
+        assertEquals(expected1, actual1, 0.00001);
+        assertEquals(expected2, actual2, 0.00001);
 
     }
 }
