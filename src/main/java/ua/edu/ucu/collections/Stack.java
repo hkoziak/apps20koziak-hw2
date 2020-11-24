@@ -7,7 +7,7 @@ public class Stack {
     public Stack() {
     }
 
-    public Object peek() {
+    public Object peekTop() {
         return this.linkedArray.getStartValue();
     }
 
