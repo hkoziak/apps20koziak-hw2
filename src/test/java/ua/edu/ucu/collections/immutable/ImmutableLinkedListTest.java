@@ -102,7 +102,7 @@ public class ImmutableLinkedListTest {
 
     @Test
     public void testArrayIfEmpty() {
-        boolean actual = baseArray.isEmpty();
+        boolean actual = baseArray.clear().isEmpty();
         assertTrue(actual);
     }
 
