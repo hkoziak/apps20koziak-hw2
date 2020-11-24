@@ -32,7 +32,7 @@ public class ImmutableArrayList implements ImmutableList {
 
     @Override
     public ImmutableArrayList addAll(int index, Object[] c) {
-        if (!(index==0)) {
+        if (!(index == 0)) {
             checkIndex(index - 1);
         }
         Object[] newArray = new Object[this.size + c.length];
